@@ -1,0 +1,6 @@
+{
+  "name": "SOLE & GOLD — Luxury Footwear",
+  "description": "Discover handcrafted luxury footwear, sneakers, loafers, heels, and formal shoes. Editorial craftsmanship with timeless elegance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
