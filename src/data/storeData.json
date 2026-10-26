@@ -7,8 +7,8 @@
     "wordmarkSuffix": "GOLD",
     "tagline": "Atelier · Footwear",
     "subtagline": "Artisanal Footwear & Bespoke Craftsmanship",
-    "logoUrl": "/logo.svg",
-    "logoLightUrl": "/logo-light.svg",
+    "logoUrl": "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?auto=format&fit=crop&w=400&q=80",
+    "logoLightUrl": "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?auto=format&fit=crop&w=400&q=80",
     "logoAlt": "SOLE & GOLD Luxury Atelier Footwear",
     "faviconUrl": "/favicon.ico",
     "announcement": "Complimentary Express Delivery Nationwide on Orders Above Rs. 10,000",
@@ -102,7 +102,7 @@
       "badge": "NEW SEASON / 2026 COLLECTION",
       "title": "Step Into Something Exceptional.",
       "subtitle": "Discover footwear designed for every step of your journey — cut from hand-selected calfskin and engineered for effortless presence.",
-      "image": "/src/assets/images/hero_sneakers_editorial_1792682101623.jpg",
+      "image": "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=1600&q=80",
       "primaryCta": {
         "text": "SHOP COLLECTION",
         "path": "/shop"
@@ -117,7 +117,7 @@
       "badge": "ARTISANAL TUSCAN LEATHERS",
       "title": "Everyday Style. Elevated.",
       "subtitle": "Hand-burnished penny loafers and formal shoes bringing together heritage Italian construction, natural cork beds, and timeless silhouette.",
-      "image": "/src/assets/images/hero_loafers_editorial_1792682103010.jpg",
+      "image": "https://images.unsplash.com/photo-1533867617858-e7b97e060509?auto=format&fit=crop&w=1600&q=80",
       "primaryCta": {
         "text": "EXPLORE THE COLLECTION",
         "path": "/category/men"
@@ -129,7 +129,7 @@
       "badge": "ARCHITECTURAL EVENING EDIT",
       "title": "Made to Make an Impression.",
       "subtitle": "Striking strap geometries, balanced block heels, and buttery kidskin linings designed for poise and all-evening comfort.",
-      "image": "/src/assets/images/hero_heels_editorial_1792682103171.jpg",
+      "image": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=1600&q=80",
       "primaryCta": {
         "text": "SHOP WOMEN",
         "path": "/category/women"
@@ -145,7 +145,7 @@
       "id": "men",
       "title": "Men's Footwear",
       "subtitle": "Oxfords, Loafers & Boots",
-      "image": "/src/assets/images/hero_loafers_editorial_1792682103010.jpg",
+      "image": "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=800&q=80",
       "filterCategory": "Men",
       "path": "/category/men"
     },
@@ -153,7 +153,7 @@
       "id": "women",
       "title": "Women's Footwear",
       "subtitle": "Heels, Flats & Sandals",
-      "image": "/src/assets/images/hero_heels_editorial_1792682103171.jpg",
+      "image": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=80",
       "filterCategory": "Women",
       "path": "/category/women"
     },
@@ -161,7 +161,7 @@
       "id": "sneakers",
       "title": "Luxury Sneakers",
       "subtitle": "Court, Runners & High-Tops",
-      "image": "/src/assets/images/hero_sneakers_editorial_1792682101623.jpg",
+      "image": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=800&q=80",
       "filterCategory": "Sneakers",
       "path": "/category/sneakers"
     },
@@ -169,7 +169,7 @@
       "id": "formal",
       "title": "Formal Collection",
       "subtitle": "Bespoke Derbies & Oxfords",
-      "image": "/src/assets/images/product_formal_oxford_1792682184081.jpg",
+      "image": "https://images.unsplash.com/photo-1533867617858-e7b97e060509?auto=format&fit=crop&w=800&q=80",
       "filterCategory": "Formal",
       "path": "/category/formal"
     }
@@ -200,7 +200,7 @@
     "badge": "THE SEASONAL EDIT",
     "title": "A Better Step Starts Here.",
     "description": "Discover your next favorite pair in our latest collection. Every shoe is shaped on anatomical lasts, using full-grain leathers sourced from historic European tanneries, finished with artisanal hand-buffing.",
-    "image": "/src/assets/images/promo_craftsmanship_1792682103600.jpg",
+    "image": "https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?auto=format&fit=crop&w=1200&q=80",
     "imageTag": "HANDCRAFTED ATELIER · 2026",
     "stats": [
       {
@@ -255,11 +255,11 @@
         "Hand-stitched perimeter cupsole",
         "Includes cotton dust bag and spare laces"
       ],
-      "image": "/src/assets/images/hero_sneakers_editorial_1792682101623.jpg",
+      "image": "https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=800&q=80",
       "gallery": [
-        "/src/assets/images/hero_sneakers_editorial_1792682101623.jpg",
-        "/src/assets/images/product_solstice_sneakers_1792682203991.jpg",
-        "/src/assets/images/promo_craftsmanship_1792682103600.jpg"
+        "https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=800&q=80"
       ],
       "productUrl": "/product/aurelio-classic-sneakers",
       "sizes": [39, 40, 41, 42, 43, 44, 45],
@@ -297,11 +297,11 @@
         "Breathable natural cork filling",
         "Ideal for business or weekend tailoring"
       ],
-      "image": "/src/assets/images/hero_loafers_editorial_1792682103010.jpg",
+      "image": "https://images.unsplash.com/photo-1533867617858-e7b97e060509?auto=format&fit=crop&w=800&q=80",
       "gallery": [
-        "/src/assets/images/hero_loafers_editorial_1792682103010.jpg",
-        "/src/assets/images/promo_craftsmanship_1792682103600.jpg",
-        "/src/assets/images/product_formal_oxford_1792682184081.jpg"
+        "https://images.unsplash.com/photo-1533867617858-e7b97e060509?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1581783342308-f792dbdd27c5?auto=format&fit=crop&w=800&q=80"
       ],
       "productUrl": "/product/verona-leather-loafers",
       "sizes": [40, 41, 42, 43, 44, 45],
@@ -338,10 +338,11 @@
         "Anti-odor bamboo charcoal sockliner",
         "Reinforced toe bumper"
       ],
-      "image": "/src/assets/images/product_urban_runner_1792682185390.jpg",
+      "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80",
       "gallery": [
-        "/src/assets/images/product_urban_runner_1792682185390.jpg",
-        "/src/assets/images/hero_sneakers_editorial_1792682101623.jpg"
+        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1575537302964-96cd47c06b1b?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=80"
       ],
       "productUrl": "/product/atlas-urban-runners",
       "sizes": [40, 41, 42, 43, 44],
@@ -378,11 +379,11 @@
         "Mirror-burnished toe cap",
         "Re-soleable construction"
       ],
-      "image": "/src/assets/images/product_formal_oxford_1792682184081.jpg",
+      "image": "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=800&q=80",
       "gallery": [
-        "/src/assets/images/product_formal_oxford_1792682184081.jpg",
-        "/src/assets/images/promo_craftsmanship_1792682103600.jpg",
-        "/src/assets/images/product_regent_derby_1792682204065.jpg"
+        "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1449505278894-297fdb3edbc1?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1533867617858-e7b97e060509?auto=format&fit=crop&w=800&q=80"
       ],
       "productUrl": "/product/siena-formal-oxfords",
       "sizes": [39, 40, 41, 42, 43, 44, 45],
@@ -419,10 +420,11 @@
         "Triple-layer ball-of-foot cushioning",
         "Gold-plated buckle"
       ],
-      "image": "/src/assets/images/hero_heels_editorial_1792682103171.jpg",
+      "image": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=80",
       "gallery": [
-        "/src/assets/images/hero_heels_editorial_1792682103171.jpg",
-        "/src/assets/images/product_strappy_sandal_1792682185411.jpg"
+        "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1535043934128-cf0b28d52f95?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1515347619252-60a4bf4fff4f?auto=format&fit=crop&w=800&q=80"
       ],
       "productUrl": "/product/luna-minimal-heels",
       "sizes": [36, 37, 38, 39, 40, 41],
@@ -458,10 +460,11 @@
         "Zero break-in period guarantee",
         "Embossed heel tab"
       ],
-      "image": "/src/assets/images/product_nova_trainers_1792682202921.jpg",
+      "image": "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=800&q=80",
       "gallery": [
-        "/src/assets/images/product_nova_trainers_1792682202921.jpg",
-        "/src/assets/images/hero_sneakers_editorial_1792682101623.jpg"
+        "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=800&q=80"
       ],
       "productUrl": "/product/nova-everyday-trainers",
       "sizes": [38, 39, 40, 41, 42, 43, 44],
@@ -498,11 +501,11 @@
         "Shock-absorbing cork filler bed",
         "Includes cedar shoe horn"
       ],
-      "image": "/src/assets/images/product_chelsea_boot_1792682183965.jpg",
+      "image": "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?auto=format&fit=crop&w=800&q=80",
       "gallery": [
-        "/src/assets/images/product_chelsea_boot_1792682183965.jpg",
-        "/src/assets/images/hero_loafers_editorial_1792682103010.jpg",
-        "/src/assets/images/promo_craftsmanship_1792682103600.jpg"
+        "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1520639888713-7851133b1ed0?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80"
       ],
       "productUrl": "/product/milano-chelsea-boots",
       "sizes": [40, 41, 42, 43, 44, 45],
@@ -538,10 +541,10 @@
         "Lightweight 180g build",
         "Hand-stitched sole border"
       ],
-      "image": "/src/assets/images/product_strappy_sandal_1792682185411.jpg",
+      "image": "https://images.unsplash.com/photo-1562273138-f46be4ebdf33?auto=format&fit=crop&w=800&q=80",
       "gallery": [
-        "/src/assets/images/product_strappy_sandal_1792682185411.jpg",
-        "/src/assets/images/hero_heels_editorial_1792682103171.jpg"
+        "https://images.unsplash.com/photo-1562273138-f46be4ebdf33?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=80"
       ],
       "productUrl": "/product/elara-elegant-sandals",
       "sizes": [36, 37, 38, 39, 40],
@@ -578,10 +581,11 @@
         "Reinforced heel pull loop",
         "Hand-stitched cupsole sidewalls"
       ],
-      "image": "/src/assets/images/product_high_tops_1792682203314.jpg",
+      "image": "https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=800&q=80",
       "gallery": [
-        "/src/assets/images/product_high_tops_1792682203314.jpg",
-        "/src/assets/images/product_urban_runner_1792682185390.jpg"
+        "https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1512374382149-233c42b6a83b?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1579338559194-a162d19bf842?auto=format&fit=crop&w=800&q=80"
       ],
       "productUrl": "/product/urban-edge-high-tops",
       "sizes": [40, 41, 42, 43, 44, 45],
@@ -618,11 +622,11 @@
         "Reinforced toe puff",
         "Antiqued hand-stained edge trim"
       ],
-      "image": "/src/assets/images/product_regent_derby_1792682204065.jpg",
+      "image": "https://images.unsplash.com/photo-1449505278894-297fdb3edbc1?auto=format&fit=crop&w=800&q=80",
       "gallery": [
-        "/src/assets/images/product_regent_derby_1792682204065.jpg",
-        "/src/assets/images/product_formal_oxford_1792682184081.jpg",
-        "/src/assets/images/promo_craftsmanship_1792682103600.jpg"
+        "https://images.unsplash.com/photo-1449505278894-297fdb3edbc1?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1533867617858-e7b97e060509?auto=format&fit=crop&w=800&q=80"
       ],
       "productUrl": "/product/regent-premium-derby-shoes",
       "sizes": [40, 41, 42, 43, 44, 45],
@@ -658,10 +662,11 @@
         "Abrasion-resistant toe cap",
         "Vintage gold foil stamping"
       ],
-      "image": "/src/assets/images/product_solstice_sneakers_1792682203991.jpg",
+      "image": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=800&q=80",
       "gallery": [
-        "/src/assets/images/product_solstice_sneakers_1792682203991.jpg",
-        "/src/assets/images/hero_sneakers_editorial_1792682101623.jpg"
+        "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=800&q=80"
       ],
       "productUrl": "/product/solstice-lifestyle-sneakers",
       "sizes": [39, 40, 41, 42, 43, 44],
@@ -698,10 +703,11 @@
         "Full calfskin lining",
         "Includes travel dust bag"
       ],
-      "image": "/src/assets/images/hero_heels_editorial_1792682103171.jpg",
+      "image": "https://images.unsplash.com/photo-1515347619252-60a4bf4fff4f?auto=format&fit=crop&w=800&q=80",
       "gallery": [
-        "/src/assets/images/hero_heels_editorial_1792682103171.jpg",
-        "/src/assets/images/product_strappy_sandal_1792682185411.jpg"
+        "https://images.unsplash.com/photo-1515347619252-60a4bf4fff4f?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1535043934128-cf0b28d52f95?auto=format&fit=crop&w=800&q=80"
       ],
       "productUrl": "/product/celeste-block-heels",
       "sizes": [36, 37, 38, 39, 40, 41],

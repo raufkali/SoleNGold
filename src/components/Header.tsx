@@ -47,25 +47,24 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, navigate }) => {
               className="text-left group cursor-pointer focus:outline-hidden flex items-center gap-3"
               aria-label={`${BRAND.displayName} Home`}
             >
-              {BRAND.logoUrl && !logoLoadError ? (
+              {BRAND.logoUrl && !logoLoadError && (
                 <img
                   src={BRAND.logoUrl}
                   alt={BRAND.logoAlt || BRAND.displayName}
-                  className="h-10 sm:h-12 w-auto object-contain transition-opacity duration-300 group-hover:opacity-90"
+                  className="h-9 w-9 sm:h-10 sm:w-10 object-cover rounded-full border border-[#B89550]/50 transition-opacity duration-300 group-hover:opacity-90 shrink-0"
                   onError={() => setLogoLoadError(true)}
                 />
-              ) : (
-                <div>
-                  <span className="font-serif text-2xl sm:text-3xl font-semibold tracking-[0.18em] text-[#171717] uppercase block">
-                    {BRAND.wordmarkPrefix}{' '}
-                    <span className="text-[#B89550]">{BRAND.wordmarkAccent}</span>{' '}
-                    {BRAND.wordmarkSuffix}
-                  </span>
-                  <span className="text-[9px] tracking-[0.35em] text-[#686868] uppercase block mt-[-3px]">
-                    {BRAND.tagline}
-                  </span>
-                </div>
               )}
+              <div>
+                <span className="font-serif text-2xl sm:text-3xl font-semibold tracking-[0.18em] text-[#171717] uppercase block leading-none">
+                  {BRAND.wordmarkPrefix}{' '}
+                  <span className="text-[#B89550]">{BRAND.wordmarkAccent}</span>{' '}
+                  {BRAND.wordmarkSuffix}
+                </span>
+                <span className="text-[9px] tracking-[0.35em] text-[#686868] uppercase block mt-1">
+                  {BRAND.tagline}
+                </span>
+              </div>
             </button>
 
             {/* Zone 2: 4-6 Clean Desktop Navigation Links */}

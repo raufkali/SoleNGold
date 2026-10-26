@@ -29,20 +29,21 @@ export const Footer: React.FC<FooterProps> = ({ navigate }) => {
               className="text-left cursor-pointer focus:outline-hidden mb-4 block"
               aria-label={`${BRAND.displayName} Home`}
             >
-              {footerLogo && !logoLoadError ? (
-                <img
-                  src={footerLogo}
-                  alt={BRAND.logoAlt || BRAND.displayName}
-                  className="h-10 sm:h-12 w-auto object-contain"
-                  onError={() => setLogoLoadError(true)}
-                />
-              ) : (
+              <div className="flex items-center gap-3">
+                {footerLogo && !logoLoadError && (
+                  <img
+                    src={footerLogo}
+                    alt={BRAND.logoAlt || BRAND.displayName}
+                    className="h-9 w-9 sm:h-10 sm:w-10 object-cover rounded-full border border-[#B89550]/50 shrink-0"
+                    onError={() => setLogoLoadError(true)}
+                  />
+                )}
                 <span className="font-serif text-2xl sm:text-3xl font-semibold tracking-[0.18em] uppercase text-white block">
                   {BRAND.wordmarkPrefix}{' '}
                   <span className="text-[#B89550]">{BRAND.wordmarkAccent}</span>{' '}
                   {BRAND.wordmarkSuffix}
                 </span>
-              )}
+              </div>
             </button>
 
             <p className="text-xs text-[#A0A0A0] leading-relaxed mb-6 max-w-sm">
