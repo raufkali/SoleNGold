@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowUp } from 'lucide-react';
+import { BRAND, CONTACT, NAVIGATION, FOOTER_DATA, SOCIAL_LINKS } from '../data/products';
 
 interface FooterProps {
   navigate: (path: string) => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({ navigate }) => {
+  const [logoLoadError, setLogoLoadError] = useState(false);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  const footerLogo = BRAND.logoLightUrl || BRAND.logoUrl;
 
   return (
     <footer className="bg-[#171717] text-white border-t border-[#2A2A2A]">
@@ -16,16 +21,56 @@ export const Footer: React.FC<FooterProps> = ({ navigate }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand Info */}
           <div className="lg:col-span-2 pr-0 lg:pr-8">
-            <span className="font-serif text-2xl sm:text-3xl font-semibold tracking-[0.18em] uppercase text-white block mb-3">
-              SOLE <span className="text-[#B89550]">&amp;</span> GOLD
-            </span>
+            <button
+              onClick={() => {
+                navigate('/');
+                scrollToTop();
+              }}
+              className="text-left cursor-pointer focus:outline-hidden mb-4 block"
+              aria-label={`${BRAND.displayName} Home`}
+            >
+              {footerLogo && !logoLoadError ? (
+                <img
+                  src={footerLogo}
+                  alt={BRAND.logoAlt || BRAND.displayName}
+                  className="h-10 sm:h-12 w-auto object-contain"
+                  onError={() => setLogoLoadError(true)}
+                />
+              ) : (
+                <span className="font-serif text-2xl sm:text-3xl font-semibold tracking-[0.18em] uppercase text-white block">
+                  {BRAND.wordmarkPrefix}{' '}
+                  <span className="text-[#B89550]">{BRAND.wordmarkAccent}</span>{' '}
+                  {BRAND.wordmarkSuffix}
+                </span>
+              )}
+            </button>
+
             <p className="text-xs text-[#A0A0A0] leading-relaxed mb-6 max-w-sm">
-              Artisanal luxury footwear designed with architectural restraint and hand-buffed European leathers. Every pair is crafted to accompany your journey with understated elegance.
+              {FOOTER_DATA.aboutText}
             </p>
+
             <div className="text-xs text-[#E7E3DA] space-y-1">
-              <p>Atelier: 42 Palm Boulevard, Gulberg III, Lahore, Pakistan</p>
-              <p>Concierge WhatsApp: +92 300 1234567</p>
-              <p>Email: concierge@soleandgold.com</p>
+              <p>Atelier: {CONTACT.atelierAddress}</p>
+              <p>
+                Concierge WhatsApp:{' '}
+                <a
+                  href={CONTACT.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#B89550] transition-colors"
+                >
+                  {CONTACT.whatsappDisplay}
+                </a>
+              </p>
+              <p>
+                Email:{' '}
+                <a
+                  href={`mailto:${CONTACT.email}`}
+                  className="hover:text-[#B89550] transition-colors"
+                >
+                  {CONTACT.email}
+                </a>
+              </p>
             </div>
           </div>
 
@@ -35,54 +80,19 @@ export const Footer: React.FC<FooterProps> = ({ navigate }) => {
               Collections
             </h4>
             <ul className="space-y-2.5 text-xs text-[#A0A0A0]">
-              <li>
-                <button
-                  onClick={() => navigate('/shop')}
-                  className="hover:text-white transition-colors cursor-pointer"
-                >
-                  All Footwear
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => navigate('/category/men')}
-                  className="hover:text-white transition-colors cursor-pointer"
-                >
-                  Men's Collection
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => navigate('/category/women')}
-                  className="hover:text-white transition-colors cursor-pointer"
-                >
-                  Women's Collection
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => navigate('/category/sneakers')}
-                  className="hover:text-white transition-colors cursor-pointer"
-                >
-                  Luxury Sneakers
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => navigate('/category/formal')}
-                  className="hover:text-white transition-colors cursor-pointer"
-                >
-                  Formal &amp; Black Tie
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => navigate('/new-arrivals')}
-                  className="hover:text-white transition-colors cursor-pointer"
-                >
-                  New Arrivals 2026
-                </button>
-              </li>
+              {NAVIGATION.footerCollections.map((link) => (
+                <li key={link.label}>
+                  <button
+                    onClick={() => {
+                      navigate(link.path);
+                      scrollToTop();
+                    }}
+                    className="hover:text-white transition-colors cursor-pointer"
+                  >
+                    {link.label}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -92,46 +102,19 @@ export const Footer: React.FC<FooterProps> = ({ navigate }) => {
               Client Care
             </h4>
             <ul className="space-y-2.5 text-xs text-[#A0A0A0]">
-              <li>
-                <button
-                  onClick={() => navigate('/contact')}
-                  className="hover:text-white transition-colors cursor-pointer"
-                >
-                  Contact Concierge
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => navigate('/contact')}
-                  className="hover:text-white transition-colors cursor-pointer"
-                >
-                  Size &amp; Fit Advisory
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => navigate('/contact')}
-                  className="hover:text-white transition-colors cursor-pointer"
-                >
-                  Domestic &amp; Global Shipping
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => navigate('/contact')}
-                  className="hover:text-white transition-colors cursor-pointer"
-                >
-                  Returns &amp; 30-Day Exchanges
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => navigate('/contact')}
-                  className="hover:text-white transition-colors cursor-pointer"
-                >
-                  Leather Care Guide
-                </button>
-              </li>
+              {NAVIGATION.footerClientCare.map((link) => (
+                <li key={link.label}>
+                  <button
+                    onClick={() => {
+                      navigate(link.path);
+                      scrollToTop();
+                    }}
+                    className="hover:text-white transition-colors cursor-pointer"
+                  >
+                    {link.label}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -141,36 +124,54 @@ export const Footer: React.FC<FooterProps> = ({ navigate }) => {
               Follow Us
             </h4>
             <ul className="space-y-2.5 text-xs text-[#A0A0A0] mb-6">
-              <li>
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="hover:text-white transition-colors"
-                >
-                  Instagram / @soleandgold
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://facebook.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="hover:text-white transition-colors"
-                >
-                  Facebook / SoleGoldAtelier
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://pinterest.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="hover:text-white transition-colors"
-                >
-                  Pinterest Lookbook
-                </a>
-              </li>
+              {SOCIAL_LINKS.instagram && (
+                <li>
+                  <a
+                    href={SOCIAL_LINKS.instagram}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-white transition-colors"
+                  >
+                    Instagram / @soleandgold
+                  </a>
+                </li>
+              )}
+              {SOCIAL_LINKS.facebook && (
+                <li>
+                  <a
+                    href={SOCIAL_LINKS.facebook}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-white transition-colors"
+                  >
+                    Facebook / SoleGoldAtelier
+                  </a>
+                </li>
+              )}
+              {SOCIAL_LINKS.pinterest && (
+                <li>
+                  <a
+                    href={SOCIAL_LINKS.pinterest}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-white transition-colors"
+                  >
+                    Pinterest Lookbook
+                  </a>
+                </li>
+              )}
+              {SOCIAL_LINKS.twitter && (
+                <li>
+                  <a
+                    href={SOCIAL_LINKS.twitter}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-white transition-colors"
+                  >
+                    X / Twitter
+                  </a>
+                </li>
+              )}
             </ul>
 
             <button
@@ -185,17 +186,35 @@ export const Footer: React.FC<FooterProps> = ({ navigate }) => {
 
         {/* Bottom Bar */}
         <div className="border-t border-[#2A2A2A] mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-[#A0A0A0] gap-4">
-          <p>© 2026 SOLE &amp; GOLD ATELIER. All rights reserved.</p>
+          <p>{FOOTER_DATA.copyright}</p>
           <div className="flex items-center gap-6">
-            <span className="cursor-pointer hover:text-white transition-colors" onClick={() => navigate('/contact')}>
+            <span
+              className="cursor-pointer hover:text-white transition-colors"
+              onClick={() => {
+                navigate('/contact');
+                scrollToTop();
+              }}
+            >
               Privacy Policy
             </span>
             <span>·</span>
-            <span className="cursor-pointer hover:text-white transition-colors" onClick={() => navigate('/contact')}>
+            <span
+              className="cursor-pointer hover:text-white transition-colors"
+              onClick={() => {
+                navigate('/contact');
+                scrollToTop();
+              }}
+            >
               Terms of Service
             </span>
             <span>·</span>
-            <span className="cursor-pointer hover:text-white transition-colors" onClick={() => navigate('/contact')}>
+            <span
+              className="cursor-pointer hover:text-white transition-colors"
+              onClick={() => {
+                navigate('/contact');
+                scrollToTop();
+              }}
+            >
               Accessibility
             </span>
           </div>

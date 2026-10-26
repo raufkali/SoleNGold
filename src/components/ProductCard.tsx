@@ -37,9 +37,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, navigate }) =
     setTimeout(() => setAddedRecently(false), 2000);
   };
 
+  const targetUrl = product.productUrl || `/product/${product.slug}`;
+
   return (
     <div
-      onClick={() => navigate(`/product/${product.slug}`)}
+      onClick={() => navigate(targetUrl)}
       className="group relative bg-[#FFFFFF] border border-[#E7E3DA] p-3 flex flex-col justify-between transition-all duration-300 hover:border-[#B89550] cursor-pointer"
     >
       {/* Top Meta & Badges */}
@@ -92,7 +94,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, navigate }) =
           <button
             onClick={(e) => {
               e.stopPropagation();
-              navigate(`/product/${product.slug}`);
+              navigate(targetUrl);
             }}
             className="w-8 h-8 bg-white/90 hover:bg-white text-[#171717] flex items-center justify-center cursor-pointer transition-colors"
             aria-label="View product details"

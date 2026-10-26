@@ -1,36 +1,26 @@
 import React from 'react';
-import { Award, Feather, ShieldCheck, Headphones } from 'lucide-react';
+import { Award, Feather, ShieldCheck, Headphones, Sparkles, Truck, CheckCircle, LucideIcon } from 'lucide-react';
+import { BRAND_BENEFITS, BrandBenefit } from '../data/products';
+
+const iconMap: Record<string, LucideIcon> = {
+  Award,
+  Feather,
+  ShieldCheck,
+  Headphones,
+  Sparkles,
+  Truck,
+  CheckCircle,
+};
 
 export const BrandBenefits: React.FC = () => {
-  const benefits = [
-    {
-      icon: Award,
-      title: 'Quality Craftsmanship',
-      description: 'Handcrafted by master cordwainers using vegetable-tanned full-grain European hides.',
-    },
-    {
-      icon: Feather,
-      title: 'Comfort-First Design',
-      description: 'Anatomical memory footbeds and breathable kidskin linings for effortless all-day wear.',
-    },
-    {
-      icon: ShieldCheck,
-      title: 'Secure Shopping',
-      description: 'Reliable Cash on Delivery & encrypted bank transfers with simple 30-day size exchanges.',
-    },
-    {
-      icon: Headphones,
-      title: 'Customer Support',
-      description: 'Direct concierge assistance via WhatsApp and email 7 days a week from 9 AM to 9 PM.',
-    },
-  ];
+  const benefits: BrandBenefit[] = BRAND_BENEFITS;
 
   return (
     <section className="py-16 bg-[#FFFFFF] border-b border-[#E7E3DA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {benefits.map((benefit, index) => {
-            const Icon = benefit.icon;
+            const Icon = iconMap[benefit.icon] || Award;
             return (
               <div
                 key={index}

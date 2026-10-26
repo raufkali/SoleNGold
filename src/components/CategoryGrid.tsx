@@ -34,7 +34,7 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({ navigate }) => {
           {CATEGORIES.map((category) => (
             <div
               key={category.id}
-              onClick={() => navigate(`/category/${category.id}`)}
+              onClick={() => navigate(category.path || `/category/${category.id}`)}
               className="group relative h-[380px] sm:h-[420px] overflow-hidden bg-[#F8F7F3] border border-[#E7E3DA] cursor-pointer flex flex-col justify-end p-6"
             >
               {/* Background Product Image with subtle scale on hover */}

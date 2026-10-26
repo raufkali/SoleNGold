@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { MessageCircle } from 'lucide-react';
+import { CONTACT, BRAND } from '../data/products';
 
 export const FloatingWhatsApp: React.FC = () => {
   const [isHovered, setIsHovered] = useState(false);
 
-  const phone = '923001234567';
-  const text = encodeURIComponent('Hello, I have a question about your shoes.');
-  const waUrl = `https://wa.me/${phone}?text=${text}`;
+  const waUrl =
+    CONTACT.whatsappUrl ||
+    `https://wa.me/${CONTACT.whatsappNumber}?text=${encodeURIComponent(
+      CONTACT.whatsappPrefilledMessage || 'Hello, I have a question about your shoes.'
+    )}`;
 
   return (
     <div
@@ -29,8 +32,8 @@ export const FloatingWhatsApp: React.FC = () => {
         target="_blank"
         rel="noopener noreferrer"
         className="w-14 h-14 bg-[#25D366] hover:bg-[#20BA5A] text-white flex items-center justify-center shadow-lg transition-transform duration-200 hover:scale-105 active:scale-95 border border-white/20 focus:outline-hidden"
-        aria-label="Chat with SOLE & GOLD on WhatsApp"
-        title="Chat with us on WhatsApp"
+        aria-label={`Chat with ${BRAND.displayName} on WhatsApp`}
+        title={`Chat with ${BRAND.displayName} on WhatsApp`}
       >
         <MessageCircle className="w-7 h-7 fill-white stroke-[#25D366]" />
       </a>

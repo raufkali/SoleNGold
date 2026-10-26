@@ -1,3 +1,5 @@
+import storeData from '../data/storeData.json';
+
 /**
  * Pure cart and financial calculation logic.
  * Decoupled from React UI for deterministic testing and clean architecture.
@@ -108,8 +110,10 @@ export function removeFromCart(
 }
 
 export function calculateCartTotals(cart: CartItem[]): CartTotals {
-  const FREE_SHIPPING_THRESHOLD = 10000;
-  const STANDARD_SHIPPING_FEE = 450;
+  const FREE_SHIPPING_THRESHOLD =
+    (storeData as any)?.storeSettings?.shipping?.freeShippingThreshold ?? 10000;
+  const STANDARD_SHIPPING_FEE =
+    (storeData as any)?.storeSettings?.shipping?.standardShippingFee ?? 450;
 
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
   const subtotal = cart.reduce((sum, item) => sum + item.unitPrice * item.quantity, 0);

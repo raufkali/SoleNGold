@@ -1,20 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { HERO_SLIDES, HeroSlide } from '../data/products';
 
 interface HeroCarouselProps {
   navigate: (path: string) => void;
-}
-
-interface Slide {
-  id: number;
-  image: string;
-  badge: string;
-  title: string;
-  subtitle: string;
-  primaryCtaText: string;
-  primaryCtaAction: () => void;
-  secondaryCtaText?: string;
-  secondaryCtaAction?: () => void;
 }
 
 export const HeroCarousel: React.FC<HeroCarouselProps> = ({ navigate }) => {
@@ -22,46 +11,11 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ navigate }) => {
   const [isPaused, setIsPaused] = useState(false);
   const touchStartX = useRef<number | null>(null);
 
-  const slides: Slide[] = [
-    {
-      id: 1,
-      image: '/src/assets/images/hero_sneakers_editorial_1792682101623.jpg',
-      badge: 'NEW SEASON / 2026 COLLECTION',
-      title: 'Step Into Something Exceptional.',
-      subtitle:
-        'Discover footwear designed for every step of your journey — cut from hand-selected calfskin and engineered for effortless presence.',
-      primaryCtaText: 'SHOP COLLECTION',
-      primaryCtaAction: () => navigate('/shop'),
-      secondaryCtaText: 'EXPLORE NEW ARRIVALS',
-      secondaryCtaAction: () => navigate('/new-arrivals'),
-    },
-    {
-      id: 2,
-      image: '/src/assets/images/hero_loafers_editorial_1792682103010.jpg',
-      badge: 'ARTISANAL TUSCAN LEATHERS',
-      title: 'Everyday Style. Elevated.',
-      subtitle:
-        'Hand-burnished penny loafers and formal shoes bringing together heritage Italian construction, natural cork beds, and timeless silhouette.',
-      primaryCtaText: 'EXPLORE THE COLLECTION',
-      primaryCtaAction: () => navigate('/category/men'),
-    },
-    {
-      id: 3,
-      image: '/src/assets/images/hero_heels_editorial_1792682103171.jpg',
-      badge: 'ARCHITECTURAL EVENING EDIT',
-      title: 'Made to Make an Impression.',
-      subtitle:
-        'Striking strap geometries, balanced block heels, and buttery kidskin linings designed for poise and all-evening comfort.',
-      primaryCtaText: 'SHOP WOMEN',
-      primaryCtaAction: () => navigate('/category/women'),
-      secondaryCtaText: 'VIEW SNEAKERS',
-      secondaryCtaAction: () => navigate('/category/sneakers'),
-    },
-  ];
+  const slides: HeroSlide[] = HERO_SLIDES;
 
   // Autoplay timer with pause on hover
   useEffect(() => {
-    if (isPaused) return;
+    if (isPaused || slides.length <= 1) return;
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 6000);
@@ -90,6 +44,8 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ navigate }) => {
     }
     touchStartX.current = null;
   };
+
+  if (!slides || slides.length === 0) return null;
 
   return (
     <section
@@ -144,19 +100,21 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ navigate }) => {
 
                 {/* Call To Action Buttons */}
                 <div className="flex flex-wrap items-center gap-4">
-                  <button
-                    onClick={slide.primaryCtaAction}
-                    className="px-8 py-3.5 bg-[#B89550] hover:bg-[#96753B] text-white text-xs font-semibold tracking-[0.2em] uppercase transition-colors cursor-pointer border border-[#B89550]"
-                  >
-                    {slide.primaryCtaText}
-                  </button>
-
-                  {slide.secondaryCtaText && slide.secondaryCtaAction && (
+                  {slide.primaryCta && (
                     <button
-                      onClick={slide.secondaryCtaAction}
+                      onClick={() => navigate(slide.primaryCta.path)}
+                      className="px-8 py-3.5 bg-[#B89550] hover:bg-[#96753B] text-white text-xs font-semibold tracking-[0.2em] uppercase transition-colors cursor-pointer border border-[#B89550]"
+                    >
+                      {slide.primaryCta.text}
+                    </button>
+                  )}
+
+                  {slide.secondaryCta && (
+                    <button
+                      onClick={() => navigate(slide.secondaryCta!.path)}
                       className="px-8 py-3.5 bg-transparent hover:bg-white/10 text-white text-xs font-semibold tracking-[0.2em] uppercase transition-colors cursor-pointer border border-[#E7E3DA]"
                     >
-                      {slide.secondaryCtaText}
+                      {slide.secondaryCta.text}
                     </button>
                   )}
                 </div>
@@ -187,14 +145,14 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ navigate }) => {
         </button>
       </div>
 
-      {/* Slide Indicators */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-3">
+      {/* Slide Indicators / Dots */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`h-[3px] transition-all cursor-pointer ${
-              index === currentSlide ? 'w-10 bg-[#B89550]' : 'w-4 bg-white/40 hover:bg-white/70'
+            className={`h-1.5 transition-all cursor-pointer ${
+              index === currentSlide ? 'w-8 bg-[#B89550]' : 'w-2 bg-white/40 hover:bg-white/70'
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />

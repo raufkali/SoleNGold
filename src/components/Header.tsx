@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ShoppingBag, Menu, X, ArrowRight } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { BRAND, NAVIGATION } from '../data/products';
 
 interface HeaderProps {
   currentPath: string;
@@ -10,15 +11,9 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ currentPath, navigate }) => {
   const { totals, setIsCartDrawerOpen } = useCart();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [logoLoadError, setLogoLoadError] = useState(false);
 
-  const navLinks = [
-    { label: 'Home', path: '/' },
-    { label: 'Shop', path: '/shop' },
-    { label: 'Men', path: '/category/men' },
-    { label: 'Women', path: '/category/women' },
-    { label: 'New Arrivals', path: '/new-arrivals' },
-    { label: 'Contact', path: '/contact' },
-  ];
+  const navLinks = NAVIGATION.mainMenu;
 
   const handleNavClick = (path: string) => {
     navigate(path);
@@ -30,25 +25,47 @@ export const Header: React.FC<HeaderProps> = ({ currentPath, navigate }) => {
     <>
       {/* Top micro announcement bar */}
       <div className="bg-[#171717] text-white text-[11px] tracking-[0.2em] uppercase py-2 px-4 text-center border-b border-[#2A2A2A]">
-        <span>Complimentary Express Delivery Nationwide on Orders Above Rs. 10,000</span>
+        {BRAND.announcementLink ? (
+          <button
+            onClick={() => handleNavClick(BRAND.announcementLink)}
+            className="hover:text-[#B89550] transition-colors cursor-pointer"
+          >
+            <span>{BRAND.announcement}</span>
+          </button>
+        ) : (
+          <span>{BRAND.announcement}</span>
+        )}
       </div>
 
       {/* Main Navigation Bar */}
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-xs border-b border-[#E7E3DA] transition-all">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20 gap-8">
-            {/* Zone 1: Brand Wordmark in Serif Face */}
+            {/* Zone 1: Brand Logo & Wordmark */}
             <button
               onClick={() => handleNavClick('/')}
-              className="text-left group cursor-pointer focus:outline-hidden"
-              aria-label="SOLE & GOLD Home"
+              className="text-left group cursor-pointer focus:outline-hidden flex items-center gap-3"
+              aria-label={`${BRAND.displayName} Home`}
             >
-              <span className="font-serif text-2xl sm:text-3xl font-semibold tracking-[0.18em] text-[#171717] uppercase block">
-                SOLE <span className="text-[#B89550]">&amp;</span> GOLD
-              </span>
-              <span className="text-[9px] tracking-[0.35em] text-[#686868] uppercase block mt-[-3px]">
-                Atelier · Footwear
-              </span>
+              {BRAND.logoUrl && !logoLoadError ? (
+                <img
+                  src={BRAND.logoUrl}
+                  alt={BRAND.logoAlt || BRAND.displayName}
+                  className="h-10 sm:h-12 w-auto object-contain transition-opacity duration-300 group-hover:opacity-90"
+                  onError={() => setLogoLoadError(true)}
+                />
+              ) : (
+                <div>
+                  <span className="font-serif text-2xl sm:text-3xl font-semibold tracking-[0.18em] text-[#171717] uppercase block">
+                    {BRAND.wordmarkPrefix}{' '}
+                    <span className="text-[#B89550]">{BRAND.wordmarkAccent}</span>{' '}
+                    {BRAND.wordmarkSuffix}
+                  </span>
+                  <span className="text-[9px] tracking-[0.35em] text-[#686868] uppercase block mt-[-3px]">
+                    {BRAND.tagline}
+                  </span>
+                </div>
+              )}
             </button>
 
             {/* Zone 2: 4-6 Clean Desktop Navigation Links */}

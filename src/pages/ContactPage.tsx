@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, MessageCircle, Phone, Clock, MapPin, CheckCircle, ArrowRight } from 'lucide-react';
 import { validateContactForm } from '../utils/cartLogic';
+import { CONTACT } from '../data/products';
 
 export const ContactPage: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -179,13 +180,13 @@ export const ContactPage: React.FC = () => {
                 Connect directly with our master fitting advisor for real-time shoe recommendations and stock inquiries.
               </p>
               <a
-                href="https://wa.me/923001234567?text=Hello%2C%20I%20have%20a%20question%20about%20your%20shoes."
+                href={CONTACT.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-[#25D366] hover:bg-[#20BA5A] text-white text-xs font-semibold tracking-wider uppercase transition-colors"
               >
                 <MessageCircle className="w-4 h-4 fill-white" />
-                <span>Chat on WhatsApp (+92 300 1234567)</span>
+                <span>Chat on WhatsApp ({CONTACT.whatsappDisplay})</span>
               </a>
             </div>
 
@@ -197,7 +198,7 @@ export const ContactPage: React.FC = () => {
                   <h4 className="font-serif text-sm font-medium text-[#171717] mb-1">
                     Flagship Atelier &amp; Showroom
                   </h4>
-                  <p>42 Palm Boulevard, Gulberg III, Lahore, 54000, Pakistan</p>
+                  <p>{CONTACT.atelierAddress}</p>
                   <p className="text-[11px] text-[#A0A0A0] mt-0.5">Private fitting appointments welcome</p>
                 </div>
               </div>
@@ -208,8 +209,12 @@ export const ContactPage: React.FC = () => {
                   <h4 className="font-serif text-sm font-medium text-[#171717] mb-1">
                     Electronic Mail
                   </h4>
-                  <p>concierge@soleandgold.com</p>
-                  <p className="text-[11px] text-[#A0A0A0] mt-0.5">Response within 4 business hours</p>
+                  <p>
+                    <a href={`mailto:${CONTACT.email}`} className="hover:text-[#B89550] transition-colors">
+                      {CONTACT.email}
+                    </a>
+                  </p>
+                  <p className="text-[11px] text-[#A0A0A0] mt-0.5">Response {CONTACT.responseTime.toLowerCase()}</p>
                 </div>
               </div>
 
@@ -219,7 +224,7 @@ export const ContactPage: React.FC = () => {
                   <h4 className="font-serif text-sm font-medium text-[#171717] mb-1">
                     Telephone
                   </h4>
-                  <p>+92 (042) 3578-9000 / +92 300 1234567</p>
+                  <p>{CONTACT.phone} / {CONTACT.mobile}</p>
                 </div>
               </div>
 
@@ -229,8 +234,8 @@ export const ContactPage: React.FC = () => {
                   <h4 className="font-serif text-sm font-medium text-[#171717] mb-1">
                     Business &amp; Concierge Hours
                   </h4>
-                  <p>Monday – Saturday: 10:00 AM – 9:00 PM (PKT)</p>
-                  <p>Sunday: 1:00 PM – 8:00 PM (PKT)</p>
+                  <p>{CONTACT.businessHoursWeekdays}</p>
+                  <p>{CONTACT.businessHoursSunday}</p>
                 </div>
               </div>
             </div>

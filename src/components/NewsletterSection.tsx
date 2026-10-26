@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { validateEmail } from '../utils/cartLogic';
 import { Check, Mail } from 'lucide-react';
+import { NEWSLETTER } from '../data/products';
 
 export const NewsletterSection: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -22,13 +23,13 @@ export const NewsletterSection: React.FC = () => {
     <section className="py-20 bg-[#F8F7F3] border-b border-[#E7E3DA]">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <span className="text-xs uppercase tracking-[0.25em] text-[#B89550] font-semibold block mb-2">
-          THE ATELIER JOURNAL
+          {NEWSLETTER.badge}
         </span>
         <h2 className="font-serif text-3xl sm:text-4xl text-[#171717] font-normal tracking-tight mb-4">
-          Stay in Step.
+          {NEWSLETTER.title}
         </h2>
         <p className="text-sm text-[#686868] max-w-lg mx-auto mb-8 font-light leading-relaxed">
-          Be the first to discover new collections, private preview invitations, and seasonal archival releases.
+          {NEWSLETTER.description}
         </p>
 
         {submitted ? (
@@ -38,10 +39,10 @@ export const NewsletterSection: React.FC = () => {
             </div>
             <div>
               <p className="text-xs font-semibold uppercase tracking-wider text-[#171717]">
-                Thank you for subscribing!
+                {NEWSLETTER.successMessage}
               </p>
               <p className="text-xs text-[#686868]">
-                You have been registered for our digital dispatch demo. No promotional spam will be sent.
+                {NEWSLETTER.disclaimer}
               </p>
             </div>
           </div>
@@ -66,16 +67,18 @@ export const NewsletterSection: React.FC = () => {
                 type="submit"
                 className="py-3.5 px-6 bg-[#171717] hover:bg-[#B89550] text-white text-xs font-semibold tracking-[0.2em] uppercase transition-colors shrink-0 cursor-pointer"
               >
-                SUBSCRIBE
+                {NEWSLETTER.buttonText}
               </button>
             </div>
+
             {error && (
-              <p className="text-xs text-red-600 mt-2 text-left tracking-wide" role="alert">
+              <p className="text-[11px] text-red-600 mt-2 text-left" role="alert">
                 {error}
               </p>
             )}
-            <p className="text-[11px] text-[#686868] mt-3">
-              We respect your privacy. Unsubscribe at any time with a single click.
+
+            <p className="text-[11px] text-[#A0A0A0] mt-3 tracking-wide">
+              {NEWSLETTER.disclaimer}
             </p>
           </form>
         )}
